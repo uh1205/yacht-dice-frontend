@@ -1,15 +1,18 @@
 import Dice from "./Dice";
+
+import { YACHT_RULE } from "../constants/yachtRule.js";
 import { MESSAGES } from "../constants/messages";
 
 export default function DiceBoard({
   diceValues,
   keptFlags,
-  isRolled,
-  remainingRollCount,
-  currentPlayer,
-  toggleKeeping,
+  rollCount,
   rollDices,
+  toggleKeeping,
+  currentPlayer,
 }) {
+  const remainingRollCount = YACHT_RULE.MAX_ROLL_COUNT - rollCount;
+
   return (
     <div>
       <div className="mb-4 flex items-center justify-between">
@@ -21,7 +24,7 @@ export default function DiceBoard({
         </p>
       </div>
       <div className="mb-4 flex h-20 items-center justify-center gap-3 p-4 text-lg font-semibold">
-        {isRolled
+        {rollCount > 0
           ? diceValues.map((v, i) => (
               <Dice
                 key={i}
