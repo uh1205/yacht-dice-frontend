@@ -50,7 +50,7 @@ export default function ScoreBoard({
   const renderCategories = (categories) =>
     Object.entries(categories).map(([key, category]) => (
       <tr key={key}>
-        <td className="h-9 border-2 border-neutral-600 px-3">
+        <td className="h-9 border-2 border-neutral-600 pr-7 pl-3">
           {category.name}
         </td>
         {players.map((player) => renderScoreCell(key, category, player))}
@@ -108,20 +108,20 @@ export default function ScoreBoard({
   );
 
   return (
-    <table className="w-75">
+    <table>
       <thead>
         <tr>
           <td className="p-2">
-            <div className="flex items-center justify-center gap-4">
+            <div className="flex flex-col items-center justify-center gap-x-2">
               <p className="text-xl">{MESSAGES.turn}</p>
-              <p className="text-2xl">{MESSAGES.turnValue(turnCount + 1)}</p>
+              <p className="text-3xl">{MESSAGES.turnValue(turnCount + 1)}</p>
             </div>
           </td>
           {players.map((player) => (
             <th
               key={player.id}
               rowSpan={2}
-              className="w-20 border-2 border-neutral-600 text-center text-lg"
+              className="w-20 border-2 border-neutral-600 text-center text-xl"
             >
               {player.name}
             </th>

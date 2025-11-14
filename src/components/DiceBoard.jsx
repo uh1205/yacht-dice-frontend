@@ -11,7 +11,7 @@ export default function DiceBoard({
   rollDices,
 }) {
   return (
-    <div className="w-80">
+    <div>
       <div className="mb-4 flex items-center justify-between">
         <h1 className="text-xl font-bold">
           {MESSAGES.playerTurn(currentPlayer.name)}
