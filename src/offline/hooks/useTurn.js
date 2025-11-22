@@ -17,7 +17,7 @@ export function useTurn() {
     if (next.id === PLAYERS[0].id) {
       setTurnCount((prev) => {
         const next = prev + 1;
-        if (next >= YACHT_RULE.MAX_TURN_COUNT) {
+        if (next >= YACHT_RULE.MAX_ROUNDS) {
           setIsGameOver(true);
           return prev;
         }

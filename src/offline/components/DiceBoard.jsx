@@ -15,15 +15,16 @@ export default function DiceBoard({
 
   return (
     <div>
-      <div className="mb-4 flex items-center justify-between">
-        <h1 className="text-xl font-bold">
+      <div className="flex justify-between items-center mb-4">
+        <h1 className="font-bold text-xl">
           {MESSAGES.playerTurn(currentPlayer.name)}
         </h1>
-        <p className="text-lg font-bold">
+        <p className="font-bold text-lg">
           {MESSAGES.remainingRoll(remainingRollCount)}
         </p>
       </div>
-      <div className="mb-4 flex h-20 items-center justify-center gap-3 p-4 text-lg font-semibold">
+
+      <div className="flex justify-center items-center gap-3 mb-4 p-4 h-20 font-semibold text-lg">
         {rollCount > 0
           ? diceValues.map((v, i) => (
               <Dice
@@ -35,11 +36,12 @@ export default function DiceBoard({
             ))
           : MESSAGES.rollPrompt}
       </div>
-      <div className="flex items-center justify-between">
+
+      <div className="flex justify-between items-center">
         <button
           onClick={rollDices}
           disabled={remainingRollCount <= 0}
-          className="rounded-2xl bg-blue-500 px-8 py-3 font-bold text-white shadow-lg transition-all hover:bg-blue-400 disabled:bg-gray-400"
+          className="bg-blue-500 hover:bg-blue-400 disabled:bg-gray-400 shadow-lg px-8 py-3 rounded-2xl font-bold text-white transition-all"
         >
           {MESSAGES.rollButton}
         </button>

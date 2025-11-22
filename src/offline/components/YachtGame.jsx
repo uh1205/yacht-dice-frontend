@@ -28,8 +28,8 @@ export default function YachtGame() {
 
   return (
     <div className="px-4 py-15">
-      <div className="flex flex-wrap-reverse content-start justify-center gap-8">
-        <div className="border border-neutral-600 p-1">
+      <div className="flex flex-wrap-reverse justify-center content-start gap-8">
+        <div className="p-1 border border-neutral-600">
           <ScoreBoard
             turnCount={turn.turnCount}
             scoresMap={scores.scoresMap}
@@ -42,13 +42,20 @@ export default function YachtGame() {
         </div>
 
         <div className="p-1">
-          <h1 className="mb-4 w-80 text-3xl font-[1000]">
+          <h1 className="mb-4 w-80 font-[1000] text-3xl">
             {MESSAGES.gameName}
           </h1>
           {turn.isGameOver ? (
             <GameOverFlow finalScores={scores.finalScores} restart={restart} />
           ) : (
-            <DiceBoard {...dice} currentPlayer={turn.currentPlayer} />
+            <DiceBoard
+              diceValues={dice.diceValues}
+              keptFlags={dice.keptFlags}
+              rollCount={dice.rollCount}
+              rollDices={dice.rollDices}
+              toggleKeeping={dice.toggleKeeping}
+              currentPlayer={turn.currentPlayer}
+            />
           )}
         </div>
       </div>

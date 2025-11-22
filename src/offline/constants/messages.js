@@ -19,6 +19,6 @@ export const MESSAGES = Object.freeze({
   remainingRoll: (count) => `🎲 앞으로 ${count}번`,
   playerTurn: (playerName) => `${playerName} 차례`,
   subtotalValue: (subtotal) => `${subtotal} / ${YACHT_RULE.BONUS_THRESHOLD}`,
-  turnValue: (turn) => `${turn} / ${YACHT_RULE.MAX_TURN_COUNT}`,
+  turnValue: (turn) => `${turn} / ${YACHT_RULE.MAX_ROUNDS}`,
   winner: (winner) => `🏆 승자: ${winner}`,
 });
