@@ -1,12 +1,10 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
+import fs from "fs";
 
 export default defineConfig({
   base: "/yacht-dice-frontend/",
-  define: {
-    global: "window",
-  },
   plugins: [
     react({
       babel: {
@@ -14,5 +12,11 @@ export default defineConfig({
       },
     }),
     tailwindcss(),
+    {
+      name: "copy-404",
+      closeBundle() {
+        fs.copyFileSync("dist/index.html", "dist/404.html");
+      },
+    },
   ],
 });
