@@ -2,11 +2,11 @@ import DiceBoard from "./DiceBoard";
 import ScoreBoard from "./ScoreBoard";
 import GameOverFlow from "./GameOverFlow";
 
-import { MESSAGES } from "../constants/messages.js";
-import { PLAYERS } from "../constants/players.js";
-import { useDice } from "../hooks/useDice";
-import { useScores } from "../hooks/useScores";
-import { useTurn } from "../hooks/useTurn";
+import { MESSAGES } from "../../constants/messsages";
+import { PLAYERS } from "../../constants/players.js";
+import { useDice } from "../../hooks/useDice.js";
+import { useScores } from "../../hooks/useScores";
+import { useTurn } from "../../hooks/useTurn";
 
 export default function YachtGame() {
   const dice = useDice();
@@ -43,7 +43,7 @@ export default function YachtGame() {
 
         <div className="p-1">
           <h1 className="mb-4 w-80 font-[1000] text-3xl">
-            {MESSAGES.gameName}
+            {MESSAGES.offlineGameName}
           </h1>
           {turn.isGameOver ? (
             <GameOverFlow finalScores={scores.finalScores} restart={restart} />

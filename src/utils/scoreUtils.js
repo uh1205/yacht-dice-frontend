@@ -1,5 +1,5 @@
 import { YACHT_RULE } from "../constants/yachtRule.js";
-import { CATEGORIES } from "../constants/categories";
+import { CATEGORIES } from "../constants/categories.js";
 
 export const calculateSubtotal = (scores) => {
   if (!scores) return 0;

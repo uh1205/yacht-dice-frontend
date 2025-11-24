@@ -1,5 +1,5 @@
 import GameResult from "./GameResult.jsx";
-import GameOverMessage from "./GameOverMessage.jsx";
+import GameOverMessage from "../GameOverMessage.jsx";
 
 import { useEffect, useState } from "react";
 

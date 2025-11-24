@@ -1,7 +1,6 @@
+import { MESSAGES } from "../../constants/messsages";
+import { YACHT_RULE } from "../../constants/yachtRule.js";
 import Dice from "./Dice";
-
-import { YACHT_RULE } from "../constants/yachtRule.js";
-import { MESSAGES } from "../constants/messages";
 
 export default function DiceBoard({
   diceValues,
@@ -37,11 +36,11 @@ export default function DiceBoard({
           : MESSAGES.rollPrompt}
       </div>
 
-      <div className="flex justify-between items-center">
+      <div className="flex justify-center items-center">
         <button
           onClick={rollDices}
           disabled={remainingRollCount <= 0}
-          className="bg-blue-500 hover:bg-blue-400 disabled:bg-gray-400 shadow-lg px-8 py-3 rounded-2xl font-bold text-white transition-all"
+          className="bg-blue-500 hover:bg-blue-400 disabled:bg-gray-400 shadow-lg px-10 py-4 rounded-2xl font-bold text-white transition-all"
         >
           {MESSAGES.rollButton}
         </button>
