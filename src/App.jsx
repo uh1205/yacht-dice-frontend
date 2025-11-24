@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./App.css";
 import AppPage from "./pages/AppPage";
-import YachtGame from "./offline/components/YachtGame";
+import YachtGame from "./components/offline/YachtGame";
 
 export default function App() {
   return (

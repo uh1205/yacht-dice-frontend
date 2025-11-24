@@ -3,14 +3,34 @@ import { useNavigate } from "react-router-dom";
 import { MESSAGES } from "../constants/messsages";
 import useYachtGame from "../hooks/useYachtGame";
 import MatchPopup from "../components/online/MatchPopup";
+import YachtGame from "../components/online/YachtGame";
 
 export default function AppPage() {
   const navigate = useNavigate();
   const [inputNickname, setInputNickname] = useState("");
-  const { player, isMatching, matchPopup, createPlayer, toggleMatch } =
-    useYachtGame();
+  const {
+    player,
+    gameState,
+    isMatching,
+    matchPopup,
+    createPlayer,
+    toggleMatch,
+    sendGameAction,
+    quitGame,
+  } = useYachtGame();
 
   const isStartDisabled = !inputNickname.trim();
+
+  if (gameState) {
+    return (
+      <YachtGame
+        gameState={gameState}
+        playerId={player.id}
+        onAction={sendGameAction}
+        onQuit={quitGame}
+      />
+    );
+  }
 
   return (
     <div className="relative flex flex-col justify-center items-center gap-6 min-h-screen text-center">
