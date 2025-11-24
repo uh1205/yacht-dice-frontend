@@ -6,7 +6,7 @@ import YachtGame from "./components/offline/YachtGame";
 
 export default function App() {
   return (
-    <BrowserRouter basename="/yacht-dice-frontend">
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<AppPage />} />
         <Route path="/offline" element={<YachtGame />} />

@@ -4,7 +4,10 @@ import tailwindcss from "@tailwindcss/vite";
 import fs from "fs";
 
 export default defineConfig({
-  base: "/yacht-dice-frontend/",
+  // base: "/yacht-dice-frontend/",
+  define: {
+    global: "window",
+  },
   plugins: [
     react({
       babel: {
